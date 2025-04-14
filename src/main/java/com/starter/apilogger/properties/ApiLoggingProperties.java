@@ -4,7 +4,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @ConfigurationProperties(prefix ="api.logging")
-@Component
 public class ApiLoggingProperties {
     /*
     * Включение или выключение логирования.

@@ -17,7 +17,6 @@ import java.util.Arrays;
 
 
 @Aspect
-@Component
 public class ApiLoggingAspect {
 
     private final ApiLoggingProperties properties;
@@ -29,9 +28,6 @@ public class ApiLoggingAspect {
 
     @Around("@annotation(com.starter.apilogger.annotation.LoggableApi)")
     public Object logApiCall(ProceedingJoinPoint joinPoint) throws Throwable {
-        if(!properties.isEnabled()){
-            return joinPoint.proceed();
-        }
 
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
